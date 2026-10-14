@@ -1,33 +1,16 @@
 name: Student Management System CI
 
-on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
-  workflow_dispatch:
+on: push: branches: [main, master] pullrequest: branches: [main, master] workflowdispatch:
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
+jobs: test: runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+steps: - name: Checkout Repository uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
+- name: Setup Python uses: actions/setup-python@v5 with: python-version: "3.11"
 
-      - name: Install Dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r "requirements (1).txt"
-          pip install pytest
+- name: Install Dependencies run: | python -m pip install --upgrade pip python -m pip install -r requirements.txt python -m pip install pytest
 
-      - name: Run Tests
-        run: python -m pytest -v
+- name: Run Tests run: python -m pytest -v
 
 #         python --version
 # python -m pip install -r "requirements (1).txt"
